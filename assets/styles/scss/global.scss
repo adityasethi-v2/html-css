@@ -14,10 +14,6 @@ body {
     overflow-y: scroll;
 }
 
-img {
-    max-width: 100%;
-}
-
 a {
     text-decoration: none;
     color: $black;
@@ -27,6 +23,7 @@ a {
     }
 }
 
+/* Form Style */
 input, textarea {
     background: $light-grey;
     border: 0px;
@@ -35,6 +32,11 @@ input, textarea {
     color: $black;
     letter-spacing: 1px;
     width: 100%;
+
+    &:focus {
+        color: $pink;
+        background: $black;
+    }
 
     &::-ms-input-placeholder {
         text-transform: uppercase;
@@ -50,7 +52,6 @@ input, textarea {
 }
 
 /* Heading Style */
-
 h1 {
     font-size: 90px;
     font-weight: 900;
@@ -63,18 +64,31 @@ h1 {
     }
 }
 
-h4 {
-    font-size: 30px;
+h2 {
+    font-size: 50px;
     font-weight: 500;
+    line-height: 40px;
+    margin-bottom: 50px;
+
+    @media #{$sm-down} {
+        font-size: 40px;
+        margin-bottom: 40px;
+    }
 }
 
 h3 {
     font-size: 45px;
 }
 
-h5 {
-    font-size: 25px;
+h4 {
+    font-size: 30px;
     font-weight: 500;
+}
+
+h5 {
+    font-size: 23px;
+    font-weight: 500;
+    margin-bottom: 10px;
 }
 
 h6 {
@@ -87,13 +101,12 @@ h6 {
     }
 }
 
+p {
+    line-height: 28px;
+    margin-bottom: 30px;
+}
 
-
-/* Button Style */
-
-
-/* */
-
+/* BG Color Style */
 .bg-pink {
     background: $pink;
 }
@@ -106,6 +119,7 @@ h6 {
     background: $dark-blue;
 }
 
+/* Text Color Style */
 .text-white {
     color: $white;
 }
@@ -122,34 +136,57 @@ h6 {
     color: $pink;
 }
 
+.text-orange {
+    color: $orange;
+}
+.text-grey {
+    color: $grey;
+}
+
+/* Text Alignment */
+.text-center {
+    text-align: center;
+}
+
+/* Button Style */
 .btn {
+    font-family: inherit;
     font-size: 13px;
     text-transform: uppercase;
     font-weight: 700;
     letter-spacing: 1px;
     border: solid 4px transparent;
-    padding: 25px 30px;
+    padding: 25px 40px;
     display: inline-block;
     border-radius: 40px;
     min-width: 240px;
+    transition: all .3s;
     text-align: center;
+    cursor: pointer;
+    
     @media #{$sm-down} {
         padding-top: 20px;
         padding-bottom: 20px;
     }
-}
 
-.btn-pink {
-    border-color: $pink;
-    &:hover {
-        background: $pink;
-        color: $white;
+    &-pink {
+        border-color: $pink;
+        &:hover {
+            background: $pink;
+            color: $white;
+        }
     }
 }
 
+/* Image Style */
+img {
+    max-width: 100%;
+}
+
+
 .img-cover {
     object-fit: cover;
-    max-width: 100%;
+    height: 100%;
     object-position: top;
     display: block;
     @media #{($md-down)} {
@@ -161,6 +198,7 @@ h6 {
     }
 }
 
+/* Grid Structure */
 .grid-2 {
     display: grid;
     grid-template-columns: 50% 50%;
@@ -177,19 +215,24 @@ h6 {
     }
 }
 
+/* Display Flex Style */
 .display-aic {
     display: flex;
     align-items: center;
 }
 
 .display-aic-jcfe {
-
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
 }
 
+/* Spacing Style */
 .sec-spacing {
     padding: 150px 25px;
-}
-
-.text-center {
-    text-align: center;
+    
+    @media #{$sm-down} {
+        padding-top: 80px;
+        padding-bottom: 80px;
+    }
 }
